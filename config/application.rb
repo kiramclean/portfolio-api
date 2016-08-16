@@ -33,5 +33,12 @@ module KiraMclean
       generate.routing_specs false
       generate.view_specs false
     end
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins /(http:\/\/|https:\/\/)kiramclean.surge.sh/
+        resource '*', headers: :any, methods: [:get, :post, :options]
+      end
+    end
   end
 end
