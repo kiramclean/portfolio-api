@@ -36,7 +36,8 @@ module KiraMclean
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins /(http:\/\/|https:\/\/)kiramclean.surge.sh/
+        origins /(http:\/\/|https:\/\/)kiramclean.surge.sh/,
+          'http://localhost:4200'
         resource '*', headers: :any, methods: [:get, :post, :options]
       end
     end
