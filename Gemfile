@@ -7,6 +7,10 @@ gem 'puma', '~> 3.0'
 gem 'active_model_serializers'
 gem 'rack-cors'
 
+# For awesome console even in prod
+gem 'awesome_print', require: false
+gem 'pry-rails'
+
 group :development, :test do
   gem 'pry'
   gem 'byebug', platform: :mri
